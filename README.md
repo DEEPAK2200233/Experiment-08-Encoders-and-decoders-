@@ -101,7 +101,7 @@ and(y5,a0,a1bar,a2);
 and(y6,a0bar,a1,a2);
 and(y7,a0,a1,a2);
 endmodule
-
+```
 ### RTL LOGIC  
 # ENCODER
 ![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/4e79a1f8-35ed-4936-8420-c7250b18e7e9)
