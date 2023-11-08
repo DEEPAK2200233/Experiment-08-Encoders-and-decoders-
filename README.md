@@ -55,42 +55,73 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step 1: Open Quartus II and select new project and choose the file location.
 
+Step 2: Module Declaration. Module should have the file name.
 
+Step 3: Input-Output Delecaration.
+
+Step 4: Use assign to define the functionality of logic circuits.
+
+Step 5: At the end give endmodule.
+
+Step 6: Run the program and choose RTL viewer to get RTL realization.
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: DEEPAK RAJ S
+RegisterNumber:  212222240023
 
+ENCODER:
 
+module enc(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+or(a0,y7,y5,y3,y1);
+or(a1,y7,y6,y3,y2);
+or(a2,y7,y6,y5,y4);
+endmodule
 
+DECODER:
 
-
+module dec (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not(a0bar,a0);
+not(a1bar,a1);
+not(a2bar,a2);
+and(y0,a0bar,a1bar,a2bar);
+and(y1,a0,a1bar,a2bar);
+and(y2,a0bar,a1,a2bar);
+and(y3,a0,a1,a2bar);
+and(y4,a0bar,a1bar,a2);
+and(y5,a0,a1bar,a2);
+and(y6,a0bar,a1,a2);
+and(y7,a0,a1,a2);
+endmodule
 
 ### RTL LOGIC  
+# ENCODER
+![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/4e79a1f8-35ed-4936-8420-c7250b18e7e9)
 
-
-
-
-
-
-
+# DECODER
+![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/a2136a37-4853-47da-ad34-caa014a23c31)
 
 ### TIMING DIGRAMS  
+# ENCODER
+![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/6f6218a5-48ba-452f-8480-30bee3c70622)
 
 
-
-
+# DECODER
+![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/5e855716-6402-42fb-aa4d-fead9d01d572)
 
 ### TRUTH TABLE 
-
-
-
-
-
+# ENCODER
+![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/2c2bee91-20b6-44c2-89a4-1d72159eb109)
+# DECODER
+![image](https://github.com/DEEPAK2200233/Experiment-08-Encoders-and-decoders-/assets/118707676/a5d8a803-47ec-4487-9102-7a9038c07f27)
 
 ### RESULTS 
+Thus, 8 to 3 Encoder and 3 to 8 Decoder is implemented using verilog and its outputs is validated.
